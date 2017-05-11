@@ -3,7 +3,7 @@
 
 AC_PREREQ([2.65])
 AC_INIT([Rhdf5lib], [0.0.1], [mike.smith@embl.de])
-AC_CONFIG_SRCDIR([src/H5.c])
+AC_CONFIG_SRCDIR([src])
 
 # Check the compiler configured with R
 : ${R_HOME=`R RHOME`}
@@ -26,7 +26,7 @@ AC_PROG_CXX
 
 #untar the lib
 BASEPBNAME="hdf5"
-PBTGZNAME=hdf5/hdf5small_cxx.tgz
+PBTGZNAME=hdf5small_cxx.tar.gz
 cd src
 if test -d ./${BASEPBNAME}; then 
 	echo 'found ' $BASEPBNAME ' header sources and tar archive;using what is there.'
@@ -44,11 +44,17 @@ cd ../../
 
 #update variables in Makevars
 HDF5_INCLUDE="${BASEPBNAME}/src"
+HDF5_CXX_INCLUDE="${BASEPBNAME}/c++/src"
 AC_SUBST(HDF5_INCLUDE)
+AC_SUBST(HDF5_CXX_INCLUDE)
 AC_MSG_NOTICE([   HDF5_INCLUDE=${HDF5_INCLUDE}])
+AC_MSG_NOTICE([   HDF5_CXX_INCLUDE=${HDF5_CXX_INCLUDE}])
 
 HDF5_LIB="${BASEPBNAME}/src/.libs/libhdf5.a"
+HDF5_CXX_LIB="${BASEPBNAME}/c++/src/.libs/libhdf5_cpp.a"
 AC_SUBST(HDF5_LIB)
+AC_SUBST(HDF5_CXX_LIB)
 AC_MSG_NOTICE([   HDF5_LIB=${HDF5_LIB}])
+AC_MSG_NOTICE([   HDF5_CXX_LIB=${HDF5_CXX_LIB}])
 AC_CONFIG_FILES([src/Makevars])
 AC_OUTPUT
