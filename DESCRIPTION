@@ -1,0 +1,12 @@
+Package: Rrhdf5lib
+Type: Package
+Title: 
+Version: 0.0.1
+Author: Mike Smith
+Maintainer: Mike Smith <mike.smith@embl.de>
+Description: 
+License: Artistic-2.0
+LazyLoad: true
+Imports: zlibbioc
+SystemRequirements: GNU make
+biocViews: Infrastructure
