@@ -2873,7 +2873,7 @@ fi;
 echo "building the bundled hdf5 library...";
 cd ${BASEPBNAME};
 ./configure  --with-pic --enable-shared=no --enable-cxx \
-    CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" CC="${CC}" CFLAGS="${CFLAGS}" F77="${F77}"
+    CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" CC="${CC}" CFLAGS="${CFLAGS} -w" F77="${F77}"
 $MAKE lib
 cd ../../
 
