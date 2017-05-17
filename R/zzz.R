@@ -18,9 +18,10 @@ pkgconfig <- function(opt = c("PKG_LIBS", "PKG_CPPFLAGS")) {
                                             patharch)
                                 }#, Darwin={
                                 #    sprintf('%s/libhts.a -lz -pthread', patharch)
-                                #}, Windows={
-                                #    sprintf('-L"%s" -lhts -lz -pthread -lws2_32', patharch)
-                                #}
+                                #}, 
+                                Windows={
+                                    sprintf('-L"%s" -lhdf5_cpp -lhdf5 -ldl -lz', patharch)
+                                }
                          )
                      }
     )
