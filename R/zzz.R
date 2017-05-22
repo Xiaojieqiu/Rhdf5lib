@@ -14,13 +14,14 @@ pkgconfig <- function(opt = c("PKG_LIBS", "PKG_CPPFLAGS")) {
                      PKG_LIBS = {
                          switch(Sys.info()['sysname'], 
                                 Linux={
-                                    sprintf('-L%s -lhdf5_cpp -lhdf5 -ldl -lz',
+                                    sprintf('-L%s -lhdf5_cpp -lhdf5 -lz -ldl',
                                             patharch)
                                 }, # Darwin={
                                 #    sprintf('%s/libhts.a -lz -pthread', patharch)
                                 #}, 
                                 Windows={
-                                    sprintf('-L"%s" -lhdf5_cpp -lhdf5 -ldl -lz', patharch)
+                                    sprintf('-L%s -lhdf5_cpp -lhdf5 -lz -lws2_32 -ldl -lm -lpsapi', 
+                                            patharch)
                                 }
                          )
                      }
