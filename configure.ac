@@ -37,6 +37,7 @@ fi;
 
 echo "building the bundled hdf5 library...";
 cd ${BASEPBNAME};
+## we add the '-w' flag to suppress all the warnings hdf5 prints
 ./configure  --with-pic --enable-shared=no --enable-cxx \
     CXX="${CXX}" CXXFLAGS="${CXXFLAGS} -w" CC="${CC}" CFLAGS="${CFLAGS} -w" F77="${F77}"
 $MAKE lib
