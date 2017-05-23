@@ -110,4 +110,51 @@ pacman -S perl
 
 ### 64 bit
 
+```{bash}
+../configure  \
+--host=x86_64-w64-mingw32 \
+--enable-cxx \
+--enable-static \
+--disable-shared \
+--disable-hl \
+--disable-fortran \
+--with-zlib=/c/Rtools/mingw_64/x86_64-w64-mingw32/ \
+CC=/c/Rtools/mingw_64/bin/gcc.exe \
+CXX=/c/Rtools/mingw_64/bin/g++.exe \
+CPP=/c/Rtools/mingw_64/bin/cpp.exe \
+RANLIB=/c/Rtools/mingw_64/bin/ranlib.exe \
+AR=/c/Rtools/mingw_64/bin/ar.exe \
+AS=/c/Rtools/mingw_64/bin/as.exe \
+DLLTOOL=/c/Rtools/mingw_64/bin/dlltool.exe \
+DLLWRAP=/c/Rtools/mingw_64/bin/dllwrap.exe \
+LDFLAGS="-liberty" \
+CPPFLAGS="-I/c/Rtools/mingw_64/x86_64-w64-mingw32/include -I/c/Rtools/mingw_64/include -L/c/Rtools/mingw_64/x86_64-w64-mingw32/lib -L/c/Rtools/mingw_64/lib"
+
+/c/Rtools/mingw_64/bin/mingw32-make.exe
+```
+
 ### 32 bit
+
+```{bash}
+../configure  \
+--host=i686-w64-mingw32 \
+--enable-cxx \
+--enable-static \
+--disable-shared \
+--disable-hl \
+--disable-fortran \
+--with-zlib=/c/Rtools/mingw_32/i686-w64-mingw32/ \
+CC=/c/Rtools/mingw_32/bin/gcc.exe \
+CXX=/c/Rtools/mingw_32/bin/g++.exe \
+CPP=/c/Rtools/mingw_32/bin/cpp.exe \
+RANLIB=/c/Rtools/mingw_32/bin/ranlib.exe \
+AR=/c/Rtools/mingw_32/bin/ar.exe \
+AS=/c/Rtools/mingw_32/bin/as.exe \
+DLLTOOL=/c/Rtools/mingw_32/bin/dlltool.exe \
+DLLWRAP=/c/Rtools/mingw_32/bin/dllwrap.exe \
+LDFLAGS="-liberty" \
+CPPFLAGS="-I/c/Rtools/mingw_32/i686-w64-mingw32/include -I/c/Rtools/mingw_32/include -L/c/Rtools/mingw_32/i686-w64-mingw32/lib -L/c/Rtools/mingw_32/lib"
+
+/c/Rtools/mingw_32/bin/mingw32-make.exe
+```
+
