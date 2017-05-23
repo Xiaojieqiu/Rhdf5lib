@@ -10,13 +10,14 @@ HDF5_CXX_INCLUDE=./hdf5/c++/src/
 
 all: $(SHLIB)
 
-$(SHLIB): Rhtslib.o
+$(SHLIB): Rhdf5lib.o
 
-Rhtslib.o: copying
+Rhdf5lib.o: copying
 
 copying:
 	@mkdir -p $(USER_LIB_DIR) $(USER_INCLUDE_DIR) $(USER_INCLUDE_DIR)/c++
 	cp "winlib$(R_ARCH)/libhdf5.a" $(USER_LIB_DIR)libhdf5.a
 	cp "winlib$(R_ARCH)/libhdf5_cpp.a" $(USER_LIB_DIR)libhdf5_cpp.a
+	cp "winlib$(R_ARCH)/libdl.a" $(USER_LIB_DIR)libdl.a
 	cp $(HDF5_INCLUDE)/*.h $(USER_INCLUDE_DIR)
 	cp $(HDF5_CXX_INCLUDE)/*.h $(USER_INCLUDE_DIR)/c++
