@@ -1,1 +1,2 @@
 export(pkgconfig)
+import(zlibbioc)

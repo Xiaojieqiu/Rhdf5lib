@@ -1,4 +1,4 @@
-#' Create layout plot of flowcell
+#' Compiler arguments for using Rhdf5lib
 #' 
 #' This function returns values for \code{PKG_CXX_LIBS} and
 #' \code{PKG_CC_FLAGS} variables for use in Makevars files. 
