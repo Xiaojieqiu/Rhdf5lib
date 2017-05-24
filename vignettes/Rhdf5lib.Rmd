@@ -29,27 +29,20 @@ To link successfully to the hdf5 library included in **Rhdf5lib** a package must
 
 Create a `src/Makevars.win` file with the following lines
 
-```{bash, eval = FALSE}
-RHDF5_LIBS=$(shell echo 'Rhdf5lib::pkgconfig("PKG_CXX_LIBS")'|\
-    "${R_HOME}/bin/R" --vanilla --slave)
-PKG_LIBS=$(RHDF5_LIBS)
-```
+    RHDF5_LIBS=$(shell echo 'Rhdf5lib::pkgconfig("PKG_CXX_LIBS")'|\
+        "${R_HOME}/bin/R" --vanilla --slave)  
+    PKG_LIBS=$(RHDF5_LIBS)
+
 
 and a `src/Makevars` file with the following lines
 
-```{bash, eval = FALSE}
-RHDF5_LIBS=`echo 'Rhdf5lib::pkgconfig("PKG_CXX_LIBS")'|\
-    "${R_HOME}/bin/R" --vanilla --slave`
-PKG_LIBS=$(RHDF5_LIBS)
-```
+    RHDF5_LIBS=`echo 'Rhdf5lib::pkgconfig("PKG_CXX_LIBS")'|\
+        "${R_HOME}/bin/R" --vanilla --slave`
+    PKG_LIBS=$(RHDF5_LIBS)
 
-The statement for each platfrom modifies the `$PKG_LIBS` variable. If
-your package needs to add to the `$PKG_LIBS` variable, do so by adding
-to the `PKG_LIBS=$(RHDF5_LIBS)` line, e.g.,
+The statement for each platfrom modifies the `$PKG_LIBS` variable. If your package needs to add to the `$PKG_LIBS` variable, do so by adding to the `PKG_LIBS=$(RHDF5_LIBS)` line, e.g.,
 
-```{bash, eval = FALSE}
-PKG_LIBS=$(RHDF5_LIBS) -L/path/to/foolib -lfoo
-```
+    PKG_LIBS=$(RHDF5_LIBS) -L/path/to/foolib -lfoo
 
 ## Find headers
 
