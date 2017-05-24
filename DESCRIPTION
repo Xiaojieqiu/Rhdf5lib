@@ -10,3 +10,4 @@ LazyLoad: true
 Imports: zlibbioc
 SystemRequirements: GNU make
 biocViews: Infrastructure
+RoxygenNote: 6.0.1
