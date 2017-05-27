@@ -15,7 +15,7 @@ $(SHLIB): Rhdf5lib.o
 Rhdf5lib.o: copying
 
 copying:
-	@mkdir -p $(USER_LIB_DIR) $(USER_INCLUDE_DIR) $(USER_INCLUDE_DIR)/c++
+	mkdir -p $(USER_LIB_DIR) $(USER_INCLUDE_DIR) $(USER_INCLUDE_DIR)/c++
 	cp "winlib$(R_ARCH)/libhdf5.a" $(USER_LIB_DIR)libhdf5.a
 	cp "winlib$(R_ARCH)/libhdf5_cpp.a" $(USER_LIB_DIR)libhdf5_cpp.a
 	cp "winlib$(R_ARCH)/libdl.a" $(USER_LIB_DIR)libdl.a
