@@ -1,6 +1,6 @@
 # locations in the installed package where we're going to copy 
 # the libraries and headers
-USER_INCLUDE_DIR="${R_PACKAGE_DIR}/include"
+USER_INCLUDE_DIR=${R_PACKAGE_DIR}/include
 USER_LIB_DIR="${R_PACKAGE_DIR}/lib${R_ARCH}/"
 
 HDF5_INCLUDE=./hdf5/src/
@@ -12,12 +12,12 @@ all: $(SHLIB)
 
 $(SHLIB): Rhdf5lib.o
 
-Rhdf5lib.o: copying
+Rhdf5lib.o: Rinstall
 
-copying:
-	mkdir -p $(USER_LIB_DIR) $(USER_INCLUDE_DIR) $(USER_INCLUDE_DIR)/c++
+Rinstall:
+	mkdir -p $(USER_LIB_DIR) "$(USER_INCLUDE_DIR)" "$(USER_INCLUDE_DIR)/c++"
 	cp "winlib$(R_ARCH)/libhdf5.a" $(USER_LIB_DIR)libhdf5.a
 	cp "winlib$(R_ARCH)/libhdf5_cpp.a" $(USER_LIB_DIR)libhdf5_cpp.a
 	cp "winlib$(R_ARCH)/libdl.a" $(USER_LIB_DIR)libdl.a
-	cp $(HDF5_INCLUDE)/*.h $(USER_INCLUDE_DIR)
-	cp $(HDF5_CXX_INCLUDE)/*.h $(USER_INCLUDE_DIR)/c++
+	cp $(HDF5_INCLUDE)/*.h "$(USER_INCLUDE_DIR)"
+	cp $(HDF5_CXX_INCLUDE)/*.h "$(USER_INCLUDE_DIR)/c++"
