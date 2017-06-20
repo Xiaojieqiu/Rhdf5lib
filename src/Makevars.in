@@ -9,6 +9,10 @@ USER_LIB_DIR = ${R_PACKAGE_DIR}/lib${R_ARCH}/
 
 all: copying $(SHLIB)
 
+$(SHLIB): Rhdf5lib.o
+
+Rhdf5lib.o: copying
+
 #copy hdf5 library headers to package include
 copying:
 	mkdir -p "${USER_INCLUDE}"

@@ -56,6 +56,12 @@ In C or C++ code files, use standard techniques, e.g., `#include "c++/hdf5.h"`. 
 system.file(package="Rhdf5lib", "include")
 ```
 
+# Funding
+
+Funding for this project is provided by The German Network for Bioinformatics Infrastructure (de.NBI) Förderkennzeichen Nr. 031A537 A
+
+![](de.NBI-Logo.PNG)
+
 # Session info {.unnumbered}
 
 ```{r sessionInfo, echo=FALSE}

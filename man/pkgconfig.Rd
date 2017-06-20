@@ -2,7 +2,7 @@
 % Please edit documentation in R/zzz.R
 \name{pkgconfig}
 \alias{pkgconfig}
-\title{Create layout plot of flowcell}
+\title{Compiler arguments for using Rhdf5lib}
 \usage{
 pkgconfig(opt = c("PKG_CXX_LIBS", "PKG_C_LIBS"))
 }
