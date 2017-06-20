@@ -34,3 +34,16 @@ SEXP Rhdf5lib_hdf5_libversion(void)
     }
     return Rval;
 }
+
+#include <R_ext/Rdynload.h>
+
+R_CallMethodDef callMethods[] = {
+  {"Rhdf5lib_hdf5_libversion", (DL_FUNC) &Rhdf5lib_hdf5_libversion, 0},
+  {NULL, NULL, 0}
+};
+
+void R_init_Rhtslib(DllInfo *info)
+{
+  R_registerRoutines(info, NULL, callMethods, NULL, NULL);
+}
+
