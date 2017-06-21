@@ -7,8 +7,10 @@ HDF5_INCLUDE=./hdf5/src/
 HDF5_CXX_INCLUDE=./hdf5/c++/src/
 
 PKG_CFLAGS = -I${HDF5_INCLUDE}
+PKG_CFLAGS += $(shell echo 'zlibbioc::pkgconfig("PKG_CFLAGS")' | "${R_HOME}/bin/R" --vanilla --slave) 
 PKG_CXXFLAGS = -I${HDF5_INCLUDE}
-PKG_LIBS = winlib${R_ARCH}/libhdf5.a winlib${R_ARCH}/libdl.a -lpsapi -lz
+PKG_LIBS = winlib${R_ARCH}/libhdf5.a winlib${R_ARCH}/libdl.a -lpsapi
+PKG_LIBS += $(shell echo 'zlibbioc::pkgconfig("PKG_LIBS_shared")' | "${R_HOME}/bin/R" --vanilla --slave)
 
 .PHONY: all Rinstall
 
