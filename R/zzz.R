@@ -55,3 +55,21 @@ pkgconfig <- function(opt = c("PKG_CXX_LIBS", "PKG_C_LIBS")) {
     
     cat(result)
 }
+
+#' Report the version of HDF5 distributed with this package
+#' 
+#' This function returns the version number of the HDF5 library that is 
+#' distributed with this package.
+#' 
+#' @return Returns a \code{character} vector of length 1 containing the version
+#' number.
+#' 
+#' @examples
+#' getHdf5Version()
+#' @export
+getHdf5Version <- function() {
+  cReturn <- .Call("Rhdf5lib_hdf5_libversion", 
+        PACKAGE = "Rhdf5lib")
+  versionNum <- paste(cReturn, collapse = ".")
+  return(versionNum)
+}
