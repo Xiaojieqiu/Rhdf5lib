@@ -58,7 +58,7 @@ system.file(package="Rhdf5lib", "include")
 
 # Funding
 
-Funding for this project is provided by The German Network for Bioinformatics Infrastructure (de.NBI) Förderkennzeichen Nr. 031A537 A
+This work was supported by the BMBF-funded Heidelberg Center for Human Bioinformatics (HD-HuB) within the German Network for Bioinformatics Infrastructure (de.NBI), Förderkennzeichen #031A537BNils Kurzawa
 
 ![](de.NBI-Logo.PNG)
 
